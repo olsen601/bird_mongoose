@@ -1,0 +1,20 @@
+<div class="edit-bird">
+
+<h2>Edit {{bird.name}} information</h2>
+
+<form method="POST" action="/edit/{{bird._id}}">
+  Name: {{bird.name}}
+  <br>Desciption: <input name="description" value="{{bird.description}}"/>
+  <br>Height: <input type="number" min="1" max="300" name="height" value="{{bird.height}}"/>CM
+  <br>Average Eggs: <input type="number" min="1" max="50" name="averageEggs" value="{{bird.averageEggs}}"/>
+  <br>Nest location: <input name="nestLocation" value="{{bird.nest.location}}"/>
+  <br>Nest materials: <input name="nestMaterials" value="{{bird.nest.material}}"/>
+  <input type="hidden" name="datesSeen" value="{{#each bird.datesSeen}}{{this}}{{/each}}"/>
+  <br><input type="submit" value="Submit"/>
+</form>
+
+<div class='flash-errors'>
+  {{#if messages}}
+    <p class="error-message">{{messages.error}}</p>
+  {{/if}}
+</div>
