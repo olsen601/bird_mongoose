@@ -32,7 +32,7 @@
 
   <form action="/delete" method="POST" class="delete_form">
     <input type="hidden" name="_id" value="{{bird._id}}">
-    <input name="deleteButton" type="submit" value="Delete">
+    <input name="deleteButton" id="deleteBtn" type="submit" value="Delete">
   </form>
 
   <form action="/edit/{{bird._id}}" method="GET">
@@ -78,3 +78,5 @@
     </div>
 
   </div>
+
+<script src="javascripts/areYouSure.js"></script>
