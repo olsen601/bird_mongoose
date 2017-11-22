@@ -11,6 +11,7 @@ var hbs = require('hbs');
 var helpers = require('./hbshelpers/helpers');
 
 var db_url = process.env.MONGO_URL2;
+console.log(db_url);
 mongoose.Promise = global.Promise;
 
 mongoose.connect(db_url, { useMongoClient: true })
